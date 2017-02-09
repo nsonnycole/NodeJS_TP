@@ -1,23 +1,46 @@
-<% include partials/header %>
 
-<h1><%=song.title%></h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include partials/head %>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  <link rel="stylesheet" src="../stylesheets/style.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
-<hr/>
+</head>
+<body class="container">
 
-Album : <%=song.album%>
+  <header>
+    <% include partials/header %>
+  </header>
 
-Artist : <%=song.artist%>
+  <section>
+  <h1><%=song.title%></h1>
 
-<% if (song.year) { %>
+  <hr/>
 
-Year : <%=song.year%>
+  <p>Album : <%=song.album%></p>
 
-<% } %>
+  <p>Artist : <%=song.artist%>
 
-<% if (song.bpm) { %>
+  <% if (song.year) { %>
 
-BPM : <%=song.bpm%>
+  <p>Year : <%=song.year%></p>
 
-<% } %>
+  <% } %>
 
-<% include partials/footer %>
+  <% if (song.bpm) { %>
+
+  <p>BPM : <%=song.bpm%></p>
+
+  <% } %>
+  </section>
+
+      <footer class="footer-copyright">
+        <% include partials/footer %>
+      </footer>
+
+    </body>
+    </html>
