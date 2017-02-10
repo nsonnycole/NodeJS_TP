@@ -25,7 +25,10 @@ const sequelize = new Sequelize(DB_name, user, pwd, { dialect, protocol, port, h
 
 const Songs = sequelize.import(path.join(__dirname, 'songs'));
 
+const Users = sequelize.import(path.join(__dirname, 'users'));
 exports.Songs = Songs;
+
+exports.Users = Users;
 
 sequelize.sync()
 
